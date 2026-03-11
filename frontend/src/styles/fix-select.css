@@ -1,0 +1,26 @@
+/* 全局样式修复 - 下拉框显示问题 */
+
+/* 修复下拉框选项被截断问题 */
+.el-select-dropdown {
+  min-width: 100% !important;
+}
+
+.el-select-dropdown__item {
+  min-width: 100%;
+  padding-right: 40px;
+}
+
+/* 确保下拉框内容完全显示 */
+.el-popper {
+  z-index: 3000 !important;
+}
+
+/* 修复表格内下拉框显示 */
+.el-table__cell {
+  overflow: visible !important;
+}
+
+/* 修复表单内下拉框 */
+.el-form-item__content {
+  overflow: visible !important;
+}

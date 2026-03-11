@@ -1,0 +1,27 @@
+# 依赖
+node_modules
+dist
+*.local
+
+# 日志
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 环境变量（包含敏感信息）
+.env
+
+# 编辑器
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.swp
+*.suo
+
+# 临时文件
+*.tmp
+*.temp
+.cache
