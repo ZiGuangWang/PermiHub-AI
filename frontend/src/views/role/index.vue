@@ -308,11 +308,13 @@ const handlePermissions = async (row) => {
 }
 
 const handleSavePermissions = async () => {
-  const checkedKeys = permissionTreeRef.value.getCheckedKeys(true)
+  const checkedKeys = permissionTreeRef.value.getCheckedKeys(false)
+  const halfCheckedKeys = permissionTreeRef.value.getHalfCheckedKeys()
+  const permissions = Array.from(new Set([...(checkedKeys || []), ...(halfCheckedKeys || [])]))
   
   try {
     await assignPermissions(currentRoleId.value, {
-      permissions: checkedKeys,
+      permissions,
     })
     ElMessage.success('权限分配成功')
     permissionDialogVisible.value = false
